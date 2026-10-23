@@ -1,0 +1,69 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import javafx.scene.layout.VBox?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.example.EtudiantController">
+    <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label style="-fx-font: NORMAL 20 Arial;"
+                    text="Exemple d'utilisation d'une table avec Java FXML">
+            </Label>
+            <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+    </VBox>
+
+    <TableView fx:id="tableView" GridPane.columnIndex="0"
+        GridPane.rowIndex="1">
+        <columns>
+                <TableColumn text="Numéro de DA"
+                prefWidth="120">
+				<cellValueFactory>
+					<PropertyValueFactory property="numDA" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Nom" prefWidth="120">
+				<cellValueFactory>
+					<PropertyValueFactory property="nom" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Prénom" prefWidth="120">
+				<cellValueFactory>
+					<PropertyValueFactory property="prenom" />
+				</cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Moyenne" prefWidth="120">
+				<cellValueFactory>
+					<PropertyValueFactory property="moyenne" />
+				</cellValueFactory>
+			</TableColumn>
+		</columns>
+	</TableView>
+<HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="0" 
+          GridPane.rowIndex="2">
+          <padding>
+			<Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+		</padding>
+          <TextField fx:id="NumDA" promptText="NumDA"
+               prefWidth="90"/>
+          <TextField fx:id="Nom" promptText="Nom"
+               prefWidth="90"/>
+          <TextField fx:id="Prenom" promptText="Prenom"
+               prefWidth="90"/>
+          <TextField fx:id="Moyenne" promptText="Moyenne"
+               prefWidth="90"/>
+          <Button text="Ajouter" onAction="#ajouterEtudiant"/>
+          
+     </HBox>
+</GridPane>
